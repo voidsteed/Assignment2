@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 
 public class MTServer {
 	
-	private static final int PORT = 4444;
+	private static final int PORT = 2000;
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
@@ -60,7 +60,8 @@ public class MTServer {
 			//send back the total to client
 			
 			PrintStream ps = new PrintStream(cs.getOutputStream());
-			ps.println("printout the total after send back to client" + total);	
+			//ps.println("printout the total after send back to client" + total);	
+			ps.println(total);	
 		}
 		cs.close();
 	}
