@@ -31,7 +31,13 @@ public class WorkerThread extends Thread {
 			while ((line = r.readLine()) != null) {
 				//Stop accepting connection when it received 'SHUTDOWN' string
 				if(line.equals("SHUTDOWN")){
+					//close the server socket
 					serverSocket.close();
+					/*for (Thread t :threads){
+					 * 		if (t!=Thread.getcurrentThread()){
+					 * 				t.join();}}
+					 * save to file
+					 * compute total write it to client*/
 					return;
 				}
 				else{
